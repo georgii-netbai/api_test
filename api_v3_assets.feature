@@ -308,3 +308,73 @@ Feature: Testing of /api/v3/assets response
     And this device sends requests to receive assets with empty "search" parameter
     Then should be received "200" response status
     And should be received "error" response with correct structure
+
+
+   @Web @/api/v3/assets
+   Scenario: Testing of status for assets when web device give 4 correct parameters
+    Given same contract as for previous scenario
+    When "web" device has connection to service
+    And this device sends requests to receive assets with parameter "search" equal ";" and "limit" equal "10" and "showcaseId" equal "1" and "page" equal "1"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give 2 correct parameters
+    Given same contract as for previous scenario
+    When "web" device has connection to service
+    And this device sends requests to receive assets with parameter "search" equal ";" and "limit" equal "10"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give 2 correct parameters
+    Given same contract as for previous scenario
+    When "web" device has connection to service
+    And this device sends requests to receive assets with parameter "showcaseId" equal "1" and "page" equal "1"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give 3 correct parameters
+    Given same contract as for previous scenario
+    When "web" device has connection to service
+    And this device sends requests to receive assets with parameter "limit" equal "10" and "showcaseId" equal "1" and "page" equal "1"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give "showcaseId" correct and "page" incorrect parameters
+    Given same contract as for previous scenario
+    When "web" device has connection to service
+    And this device sends requests to receive assets with parameter "showcaseId" equal "1" and "page" equal "-1"
+    Then should be received "200" response status
+    And should be received "error" response with correct structure
+
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give "page" correct and "limit" incorrect parameters
+    Given same contract as for previous scenario
+    When "web" device has connection to service
+    And this device sends requests to receive assets with parameter "page" equal "1" and "limit" equal "-1"
+    Then should be received "200" response status
+    And should be received "error" response with correct structure
+
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give "limit" correct and "showcaseId" incorrect parameters
+    Given same contract as for previous scenario
+    When "web" device has connection to service
+    And this device sends requests to receive assets with parameter "limit" equal "1" and "showcaseId" equal "-1"
+    Then should be received "200" response status
+    And should be received "error" response with correct structure
