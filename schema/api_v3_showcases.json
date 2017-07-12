@@ -1,0 +1,27 @@
+{
+  "title": "/api/v3/showcases",
+  "type": "object",
+  "required": [
+    "items",
+    "total"
+  ],
+  "properties": {
+    "total": {"type": "integer"},
+    "items": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "required": [
+            "id",
+            "caption"
+          ],
+          "properties": {
+            "id": {"type": "integer"},
+            "caption": {"type": "string"}
+          }
+        }
+      ]
+    }
+  }
+}

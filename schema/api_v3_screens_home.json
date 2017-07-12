@@ -1,0 +1,144 @@
+
+{
+  "title": "/api/v3/screens/home",
+  "type": "object",
+  "required":[
+    "showcases",
+    "contentSources",
+    "channels"
+  ],
+  "properties":{
+    "showcases": {
+      "type": "array",
+      "items": [
+        {
+          "title": "showcase",
+          "required":[
+            "id",
+            "caption",
+            "assets"
+          ],
+          "properties":{
+            "id": {"type": "integer"},
+            "caption": {"type": "string"},
+            "assets": {
+              "type": "array",
+              "items": [
+                {
+                 "description":"A representation of a short asset data returned to client",
+                 "type":"object",
+                 "required":[
+                    "id",
+                    "type"
+                 ],
+                 "properties":{
+                    "id":{
+                       "type":"string",
+                       "description":"AssetID"
+                    },
+                    "sourceId":{
+                       "type":"string",
+                       "description":"Source of content, provider ID"
+                    },
+                    "type":{
+                       "type":"integer",
+                       "description":"Asset type LiveTV/VoD/OTT"
+                    },
+                    "channelId":{
+                       "type":"integer",
+                       "description":"LiveTV channel ID"
+                    },
+                    "startTime":{
+                       "type":"integer",
+                       "description":"availability StartTime. For LiveTV broadcast start, for Vod start license. UNIX format"
+                    },
+                    "endTime":{
+                       "type":"integer",
+                       "description":"availability EndTime. For LiveTV broadcast end, for Vod end license. UNIX format"
+                    },
+                    "title":{
+                       "type":"string",
+                       "description":"Title Russian"
+                    },
+                    "genreBroad":{
+                       "type":"array",
+                       "items":{
+                          "type":"string"
+                       },
+                       "description":"Broad Genre classification, Russian language"
+                    },
+                    "ageRating":{
+                       "type":"string",
+                       "description":"Rating system of age classification of content"
+                    },
+                    "discount":{
+                       "type":"string",
+                       "description":"75% for example"
+                    },
+                    "resources":{
+                       "type":"object"
+                    }
+                 }
+              }]
+            }
+          }
+        }
+      ]
+    },
+    "contentSources":{
+      "type": "array",
+      "items": [
+        {
+         "description":"A representation of a content source (content provider)",
+         "type":"object",
+         "required":[
+            "id",
+            "name"
+         ],
+         "properties":{
+            "id":{
+               "type":"string",
+               "description":"provider ID"
+            },
+            "title":{
+               "type":"string",
+               "description":"provider title"
+            },
+            "name":{
+               "type":"string",
+               "description":"provider name"
+            },
+            "resources":{
+               "type":"object",
+               "description":"resourse URLs"
+            }
+         }
+      }]
+    },
+    "channels": {
+      "type": "array",
+      "items": [
+        {
+         "description":"A representation of a Channel",
+         "type":"object",
+         "required":[
+            "id",
+            "name"
+         ],
+         "properties":{
+            "id":{
+               "type":"string",
+               "description":"Channel ID"
+            },
+            "name":{
+               "type":"string",
+               "description":"Channel name"
+            },
+            "resources":{
+               "type":"object"
+            }
+         }
+      }]
+    }
+  }
+}

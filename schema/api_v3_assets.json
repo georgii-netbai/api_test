@@ -1,0 +1,72 @@
+
+{
+  "title": "/api/v3/assets",
+  "type": "object",
+  "required": [
+    "items",
+    "total"
+  ],
+  "properties":{
+    "total": {"type": "integer"},
+    "items": {
+      "type": "array",
+      "items": {
+         "description":"A representation of a short asset data returned to client",
+         "type":"object",
+         "required":[
+            "id",
+            "type"
+         ],
+         "properties":{
+            "id":{
+               "type":"string",
+               "description":"AssetID"
+            },
+            "sourceId":{
+               "type":"string",
+               "description":"Source of content, provider ID"
+            },
+            "type":{
+               "type":"integer",
+               "description":"Asset type LiveTV/VoD/OTT"
+            },
+            "channelId":{
+               "type":"integer",
+               "description":"LiveTV channel ID"
+            },
+            "startTime":{
+               "type":"integer",
+               "description":"availability StartTime. For LiveTV broadcast start, for Vod start license. UNIX format"
+            },
+            "endTime":{
+               "type":"integer",
+               "description":"availability EndTime. For LiveTV broadcast end, for Vod end license. UNIX format"
+            },
+            "title":{
+               "type":"string",
+               "description":"Title Russian"
+            },
+            "genreBroad":{
+               "type":"array",
+               "items":{
+                  "type":"string"
+               },
+               "description":"Broad Genre classification, Russian language"
+            },
+            "ageRating":{
+               "type":"string",
+               "description":"Rating system of age classification of content"
+            },
+            "discount":{
+               "type":"string",
+               "description":"75% for example"
+            },
+            "resources":{
+               "type":"object"
+            }
+         }
+      }
+    }
+  }
+
+}
