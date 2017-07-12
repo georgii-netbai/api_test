@@ -25,8 +25,8 @@ Feature: Testing of /api/v3/showcases response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @IOS @/api/v3/showcases
-  Scenario: Testing status for showcases for prepaid contract when ios device give "limit" equal "1"
+  @iOS @/api/v3/showcases
+  Scenario: Testing status for showcases for prepaid contract when iOS device give "limit" equal "1"
     Given same contract as for previous scenario
     When "android" device has connection to service
     And this device sends requests to receive showcases with parameter "limit" equal "1"
@@ -70,8 +70,8 @@ Feature: Testing of /api/v3/showcases response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @IOS @/api/v3/showcases
-  Scenario: Testing status for showcases for prepaid contract when ios device give "page" equal "1"
+  @iOS @/api/v3/showcases
+  Scenario: Testing status for showcases for prepaid contract when iOS device give "page" equal "1"
     Given same contract as for previous scenario
     When "android" device has connection to service
     And this device sends requests to receive showcases with parameter "page" equal "1"
@@ -115,8 +115,8 @@ Feature: Testing of /api/v3/showcases response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @IOS @/api/v3/showcases
-  Scenario: Testing status for showcases for prepaid contract when ios device give "groupId" equal "1"
+  @iOS @/api/v3/showcases
+  Scenario: Testing status for showcases for prepaid contract when iOS device give "groupId" equal "1"
     Given same contract as for previous scenario
     When "android" device has connection to service
     And this device sends requests to receive showcases with parameter "groupId" equal "1"
@@ -162,8 +162,8 @@ Feature: Testing of /api/v3/showcases response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @IOS @/api/v3/showcases
-  Scenario: Testing status for showcases for prepaid contract when ios device give "limit" equal "1"
+  @iOS @/api/v3/showcases
+  Scenario: Testing status for showcases for prepaid contract when iOS device give "limit" equal "1"
     Given same contract as for previous scenario
     When "android" device has connection to service
     And this device sends requests to receive showcases with parameter "limit" equal "1"
@@ -207,8 +207,8 @@ Feature: Testing of /api/v3/showcases response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @IOS @/api/v3/showcases
-  Scenario: Testing status for showcases for prepaid contract when ios device give "page" equal "1"
+  @iOS @/api/v3/showcases
+  Scenario: Testing status for showcases for prepaid contract when iOS device give "page" equal "1"
     Given same contract as for previous scenario
     When "android" device has connection to service
     And this device sends requests to receive showcases with parameter "page" equal "1"
@@ -252,8 +252,8 @@ Feature: Testing of /api/v3/showcases response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @IOS @/api/v3/showcases
-  Scenario: Testing status for showcases for prepaid contract when ios device give "groupId" equal "1"
+  @iOS @/api/v3/showcases
+  Scenario: Testing status for showcases for prepaid contract when iOS device give "groupId" equal "1"
     Given same contract as for previous scenario
     When "android" device has connection to service
     And this device sends requests to receive showcases with parameter "groupId" equal "1"
@@ -298,8 +298,8 @@ Feature: Testing of /api/v3/showcases response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @IOS @/api/v3/showcases
-  Scenario: Testing status for showcases for postpaid contract when ios device give "limit" equal "1"
+  @iOS @/api/v3/showcases
+  Scenario: Testing status for showcases for postpaid contract when iOS device give "limit" equal "1"
     Given same contract as for previous scenario
     When "android" device has connection to service
     And this device sends requests to receive showcases with parameter "limit" equal "1"
@@ -332,8 +332,8 @@ Feature: Testing of /api/v3/showcases response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @IOS @/api/v3/showcases
-  Scenario: Testing status for showcases for postpaid contract when ios device give "page" equal "1"
+  @iOS @/api/v3/showcases
+  Scenario: Testing status for showcases for postpaid contract when iOS device give "page" equal "1"
     Given same contract as for previous scenario
     When "android" device has connection to service
     And this device sends requests to receive showcases with parameter "page" equal "1"
@@ -377,8 +377,8 @@ Feature: Testing of /api/v3/showcases response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @IOS @/api/v3/showcases
-  Scenario: Testing status for showcases for postpaid contract when ios device give "groupId" equal "1"
+  @iOS @/api/v3/showcases
+  Scenario: Testing status for showcases for postpaid contract when iOS device give "groupId" equal "1"
     Given same contract as for previous scenario
     When "android" device has connection to service
     And this device sends requests to receive showcases with parameter "groupId" equal "1"

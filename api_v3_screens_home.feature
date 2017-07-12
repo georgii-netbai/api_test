@@ -27,8 +27,8 @@ Feature: Testing of /api/v3/screens/home response
     And "contentSources" block should be presented in response
     And "channels" block should be presented in response
 
-  @IOS @/api/v3/screens/home
-  Scenario: Testing status for screens for prepaid contract when ios device give "limit" equal "1"
+  @iOS @/api/v3/screens/home
+  Scenario: Testing status for screens for prepaid contract when iOS device give "limit" equal "1"
     Given same contract as for previous scenario
     When "android" device has connection to service
     And this device sends requests to receive screens with parameter "limit" equal "1"
@@ -78,8 +78,8 @@ Feature: Testing of /api/v3/screens/home response
     And "contentSources" block should be presented in response
     And "channels" block should be presented in response
 
-  @IOS @/api/v3/screens/home
-  Scenario: Testing status for screens for prepaid contract when ios device give "limit" equal "1"
+  @iOS @/api/v3/screens/home
+  Scenario: Testing status for screens for prepaid contract when iOS device give "limit" equal "1"
     Given same contract as for previous scenario
     When "android" device has connection to service
     And this device sends requests to receive screens with parameter "limit" equal "1"
@@ -128,8 +128,8 @@ Feature: Testing of /api/v3/screens/home response
     And "contentSources" block should be presented in response
     And "channels" block should be presented in response
 
-  @IOS @/api/v3/screens/home
-  Scenario: Testing status for screens for postpaid contract when ios device give "limit" equal "1"
+  @iOS @/api/v3/screens/home
+  Scenario: Testing status for screens for postpaid contract when iOS device give "limit" equal "1"
     Given same contract as for previous scenario
     When "android" device has connection to service
     And this device sends requests to receive screens with parameter "limit" equal "1"
