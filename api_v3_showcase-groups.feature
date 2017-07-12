@@ -197,6 +197,17 @@ Feature: Testing of /api/v3/showcase-groups response
     And this block should be not empty
     And "total" block should be presented in response
 
+  @Web @/api/v3/showcase-groups
+  Scenario: Testing status for showcase-groups for postpaid contract when web device give "limit" equal "1"
+    Given same contract as for previous scenario
+    When "web" device has connection to service
+    And this device sends requests to receive showcase-groups with parameter "limit" equal "1"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
   @Android @/api/v3/showcase-groups
   Scenario: Testing status for showcase-groups for postpaid contract when android device give "limit" equal "1"
     Given same contract as for previous scenario
