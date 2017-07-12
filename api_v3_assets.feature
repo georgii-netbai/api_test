@@ -48,20 +48,55 @@ Feature: Testing of /api/v3/assets response
 
 
   @Web @/api/v3/assets
-  Scenario: Testing of status for assets when web device give correct limit equal 10
+  Scenario: Testing of status for assets when web device give correct limit
     Given same contract as for previous scenario
-    When "web" device has connection to service
-    And this device sends requests to receive assets with parameter "limit" equal "10"
+    When "android" device has connection to service
+    And this device sends requests to receive assets with parameter "limit" equal "1"
     Then should be received "200" response status
     And should be received "success" response with correct structure
     And "items" block should be presented in response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @Web @/api/v3/assets
-  Scenario: Testing of status for assets when web device give correct page equal 1
+  @Android @/api/v3/assets
+  Scenario: Testing of status for assets when web device give correct limit
     Given same contract as for previous scenario
-    When "web" device has connection to service
+    When "android" device has connection to service
+    And this device sends requests to receive assets with parameter "limit" equal "1"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+  @iOS @/api/v3/assets
+  Scenario: Testing of status for assets when iOS device give correct limit
+    Given same contract as for previous scenario
+    When "ios" device has connection to service
+    And this device sends requests to receive assets with parameter "limit" equal "1"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+  @STB @/api/v3/assets
+  Scenario: Testing of status for assets when web device give correct limit
+    Given same contract as for previous scenario
+    When "stb" device has connection to service
+    And this device sends requests to receive assets with parameter "limit" equal "1"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+
+
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give correct page
+    Given same contract as for previous scenario
+    When "android" device has connection to service
     And this device sends requests to receive assets with parameter "page" equal "1"
     Then should be received "200" response status
     And should be received "success" response with correct structure
@@ -69,16 +104,85 @@ Feature: Testing of /api/v3/assets response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @Web @/api/v3/assets
-  Scenario: Testing of status for assets when web device give search equal " "
+  @Android @/api/v3/assets
+  Scenario: Testing of status for assets when web device give correct page
     Given same contract as for previous scenario
-    When "web" device has connection to service
+    When "android" device has connection to service
+    And this device sends requests to receive assets with parameter "page" equal "1"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+  @iOS @/api/v3/assets
+  Scenario: Testing of status for assets when iOS device give correct page
+    Given same contract as for previous scenario
+    When "ios" device has connection to service
+    And this device sends requests to receive assets with parameter "page" equal "1"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+  @STB @/api/v3/assets
+  Scenario: Testing of status for assets when web device give correct page
+    Given same contract as for previous scenario
+    When "stb" device has connection to service
+    And this device sends requests to receive assets with parameter "page" equal "1"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+
+
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give correct search
+    Given same contract as for previous scenario
+    When "android" device has connection to service
     And this device sends requests to receive assets with parameter "search" equal " "
     Then should be received "200" response status
     And should be received "success" response with correct structure
     And "items" block should be presented in response
     And this block should be not empty
     And "total" block should be presented in response
+
+  @Android @/api/v3/assets
+  Scenario: Testing of status for assets when web device give correct search
+    Given same contract as for previous scenario
+    When "android" device has connection to service
+    And this device sends requests to receive assets with parameter "search" equal " "
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+  @iOS @/api/v3/assets
+  Scenario: Testing of status for assets when iOS device give correct search
+    Given same contract as for previous scenario
+    When "ios" device has connection to service
+    And this device sends requests to receive assets with parameter "search" equal " "
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+  @STB @/api/v3/assets
+  Scenario: Testing of status for assets when web device give correct search
+    Given same contract as for previous scenario
+    When "stb" device has connection to service
+    And this device sends requests to receive assets with parameter "search" equal " "
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
 
 
   @Web @/api/v3/assets
@@ -127,11 +231,11 @@ Feature: Testing of /api/v3/assets response
     And "total" block should be presented in response
 
 
-  @STB @/api/v3/assets
-  Scenario: Testing of status for assets when stb device give correct showcaseid
+
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give correct showcaseid
     Given "postpaid" contract with following parameters
-    And there is "Humax 9000i" device added to contract
-    When "stb" device has connection to service
+    When "web" device has connection to service
     And this device sends requests to receive assets with parameter "showcaseid" equal "1"
     Then should be received "200" response status
     And should be received "success" response with correct structure
@@ -139,10 +243,10 @@ Feature: Testing of /api/v3/assets response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @STB @/api/v3/assets
-  Scenario: Testing of status for assets when stb device give search equal " "
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give search equal " "
     Given same contract as for previous scenario
-    When "stb" device has connection to service
+    When "web" device has connection to service
     And this device sends requests to receive assets with parameter "search" equal " "
     Then should be received "200" response status
     And should be received "success" response with correct structure
@@ -150,10 +254,10 @@ Feature: Testing of /api/v3/assets response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @STB @/api/v3/assets
-  Scenario: Testing of status for assets when stb device give correct limit equal 10
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give correct limit equal 10
     Given same contract as for previous scenario
-    When "stb" device has connection to service
+    When "web" device has connection to service
     And this device sends requests to receive assets with parameter "limit" equal "10"
     Then should be received "200" response status
     And should be received "success" response with correct structure
@@ -161,10 +265,10 @@ Feature: Testing of /api/v3/assets response
     And this block should be not empty
     And "total" block should be presented in response
 
-  @STB @/api/v3/assets
-  Scenario: Testing of status for assets when stb device give ccorrect page equal 1
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give ccorrect page equal 1
     Given same contract as for previous scenario
-    When "stb" device has connection to service
+    When "web" device has connection to service
     And this device sends requests to receive assets with parameter "page" equal "1"
     Then should be received "200" response status
     And should be received "success" response with correct structure
@@ -173,13 +277,6 @@ Feature: Testing of /api/v3/assets response
     And "total" block should be presented in response
 
 
-  @Android @/api/v3/assets
-  Scenario: Testing of status for assets when web device give correct showecaseid
-    Given same contract as for previous scenario
-    When "android" device has connection to service
-    And this device sends requests to receive assets with parameter "showcaseid" equal "1"
-    Then should be received "200" response status
-    And should be received "error" response with correct structure
 
   @Web @/api/v3/assets
   Scenario: Testing of status for assets when web device give incorrect showecaseid equal "a"
@@ -206,17 +303,6 @@ Feature: Testing of /api/v3/assets response
     And should be received "error" response with correct structure
 
 
-  @Android @/api/v3/assets
-  Scenario: Testing of status for assets when android device give correct limit equal 10
-    Given same contract as for previous scenario
-    When "android" device has connection to service
-    And this device sends requests to receive assets with parameter "limit" equal "10"
-    Then should be received "200" response status
-    And should be received "success" response with correct structure
-    And "items" block should be presented in response
-    And this block should be not empty
-    And "total" block should be presented in response
-
 
   @Web @/api/v3/assets
   Scenario: Testing of status for assets when web device give incorrect limit equal "z"
@@ -241,6 +327,8 @@ Feature: Testing of /api/v3/assets response
     And this device sends requests to receive assets with empty "limit" parameter
     Then should be received "200" response status
     And should be received "error" response with correct structure
+
+
 
   @Web @/api/v3/assets
   Scenario: Testing of status for assets when web device give incorrect page equal "z"
@@ -267,39 +355,6 @@ Feature: Testing of /api/v3/assets response
     And should be received "error" response with correct structure
 
 
-  @Android @/api/v3/assets
-  Scenario: Testing of status for assets when Android device give search equal " "
-    Given same contract as for previous scenario
-    When "android" device has connection to service
-    And this device sends requests to receive assets with parameter "search" equal " "
-    Then should be received "200" response status
-    And should be received "success" response with correct structure
-    And "items" block should be presented in response
-    And this block should be not empty
-    And "total" block should be presented in response
-
-  @Android @/api/v3/assets
-  Scenario: Testing of status for assets when Android device give search equal ";"
-    Given same contract as for previous scenario
-    When "android" device has connection to service
-    And this device sends requests to receive assets with parameter "search" equal ";"
-    Then should be received "200" response status
-    And should be received "success" response with correct structure
-    And "items" block should be presented in response
-    And this block should be not empty
-    And "total" block should be presented in response
-
-  @Android @/api/v3/assets
-  Scenario: Testing of status for assets when Android device give search equal "\n"
-    Given same contract as for previous scenario
-    When "android" device has connection to service
-    And this device sends requests to receive assets with parameter "search" equal "\n"
-    Then should be received "200" response status
-    And should be received "success" response with correct structure
-    And "items" block should be presented in response
-    And this block should be not empty
-    And "total" block should be presented in response
-
 
   @Web @/api/v3/assets
   Scenario: Testing of status for assets when web device give empty search
@@ -308,6 +363,42 @@ Feature: Testing of /api/v3/assets response
     And this device sends requests to receive assets with empty "search" parameter
     Then should be received "200" response status
     And should be received "error" response with correct structure
+
+
+    
+  @Web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give search equal " "
+    Given same contract as for previous scenario
+    When "web" device has connection to service
+    And this device sends requests to receive assets with parameter "search" equal " "
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+  @web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give search equal ";"
+    Given same contract as for previous scenario
+    When "web" device has connection to service
+    And this device sends requests to receive assets with parameter "search" equal ";"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
+  @web @/api/v3/assets
+  Scenario: Testing of status for assets when web device give search equal "\n"
+    Given same contract as for previous scenario
+    When "web" device has connection to service
+    And this device sends requests to receive assets with parameter "search" equal "\n"
+    Then should be received "200" response status
+    And should be received "success" response with correct structure
+    And "items" block should be presented in response
+    And this block should be not empty
+    And "total" block should be presented in response
+
 
 
    @Web @/api/v3/assets
@@ -356,7 +447,7 @@ Feature: Testing of /api/v3/assets response
 
 
   @Web @/api/v3/assets
-  Scenario: Testing of status for assets when web device give "showcaseId" correct and "page" incorrect parameters
+  Scenario: Testing of status for assets when web device give correct "showcaseId" and incorrect "page" parameters
     Given same contract as for previous scenario
     When "web" device has connection to service
     And this device sends requests to receive assets with parameter "showcaseId" equal "1" and "page" equal "-1"
@@ -364,7 +455,7 @@ Feature: Testing of /api/v3/assets response
     And should be received "error" response with correct structure
 
   @Web @/api/v3/assets
-  Scenario: Testing of status for assets when web device give "page" correct and "limit" incorrect parameters
+  Scenario: Testing of status for assets when web device give correct "page" and incorrect "limit" parameters
     Given same contract as for previous scenario
     When "web" device has connection to service
     And this device sends requests to receive assets with parameter "page" equal "1" and "limit" equal "-1"
@@ -372,7 +463,7 @@ Feature: Testing of /api/v3/assets response
     And should be received "error" response with correct structure
 
   @Web @/api/v3/assets
-  Scenario: Testing of status for assets when web device give "limit" correct and "showcaseId" incorrect parameters
+  Scenario: Testing of status for assets when web device give correct "limit" and incorrect "showcaseId" parameters
     Given same contract as for previous scenario
     When "web" device has connection to service
     And this device sends requests to receive assets with parameter "limit" equal "1" and "showcaseId" equal "-1"
