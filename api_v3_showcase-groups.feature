@@ -51,6 +51,7 @@ Feature: Testing of /api/v3/showcase-groups response
     |page     |1    |
 
 
+
   @Web @/api/v3/showcase-groups
   Scenario Outline: Testing status for showcase-groups for prepaid contract when web device give correct parameter
     Given "prepaid" contract with following parameters
