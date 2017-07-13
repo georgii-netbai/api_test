@@ -83,20 +83,17 @@ Feature: Testing of /api/v3/screens/home response
 
 
   @Web @/api/v3/screens/home
-  Scenario: Testing status for screens for postpaid contract when web device give "limit" equal "-1"
+  Scenario Outline: Testing status for screens for postpaid contract when web device give incorrect "limit" parameter
     Given same contract as for previous scenario
     When "web" device has connection to service
-    And this device sends requests to receive screens with parameter "limit" equal "-1"
+    And this device sends requests to receive screens with parameter "limit" equal <value>
     Then should be received "200" response status
     And should be received "error" response with correct structure
+   Examples:
+    |value|
+    |-1   |
+    |\r   |
 
-  @Web @/api/v3/screens/home
-  Scenario: Testing status for screens for postpaid contract when web device give "limit" equal "\r"
-    Given same contract as for previous scenario
-    When "web" device has connection to service
-    And this device sends requests to receive screens with parameter "limit" equal "\r"
-    Then should be received "200" response status
-    And should be received "error" response with correct structure
 
   @Web @/api/v3/screens/home
   Scenario: Testing status for screens for postpaid contract when web device give empty "limit" parameter
