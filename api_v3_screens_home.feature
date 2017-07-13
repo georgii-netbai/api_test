@@ -29,7 +29,7 @@ Feature: Testing of /api/v3/screens/home response
   @iOS @/api/v3/screens/home
   Scenario: Testing status for screens for prepaid contract when iOS device give "limit" equal "1"
     Given same contract as for previous scenario
-    When "android" device has connection to service
+    When "iOS" device has connection to service
     And this device sends requests to receive screens with parameter "limit" equal "1"
     Then should be received "200" response status
     And should be received "success" response with correct structure
