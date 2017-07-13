@@ -27,7 +27,7 @@ Feature: Testing of /api/v3/showcases response
   @iOS @/api/v3/showcases
   Scenario: Testing status for showcases for prepaid contract when iOS device give "limit" equal "1"
     Given same contract as for previous scenario
-    When "android" device has connection to service
+    When "iOS" device has connection to service
     And this device sends requests to receive showcases with parameter "limit" equal "1"
     Then should be received "200" response status
     And should be received "success" response with correct structure
@@ -62,7 +62,7 @@ Feature: Testing of /api/v3/showcases response
   @iOS @/api/v3/showcases
   Scenario: Testing status for showcases for prepaid contract when iOS device give "page" equal "1"
     Given same contract as for previous scenario
-    When "android" device has connection to service
+    When "iOS" device has connection to service
     And this device sends requests to receive showcases with parameter "page" equal "1"
     Then should be received "200" response status
     And should be received "success" response with correct structure
@@ -97,7 +97,7 @@ Feature: Testing of /api/v3/showcases response
   @iOS @/api/v3/showcases
   Scenario: Testing status for showcases for prepaid contract when iOS device give "groupId" equal "1"
     Given same contract as for previous scenario
-    When "android" device has connection to service
+    When "iOS" device has connection to service
     And this device sends requests to receive showcases with parameter "groupId" equal "1"
     Then should be received "200" response status
     And should be received "success" response with correct structure
@@ -388,11 +388,7 @@ Feature: Testing of /api/v3/showcases response
     When "web" device has connection to service
     And this device sends requests to receive showcases with parameter "limit" equal "1" and "showcaseId" equal "-1"
     Then should be received "200" response status
-    And should be received "success" response with correct structure
-    And "items" block should be presented in response
-    And this block should be not empty
-    And every element of array "items" must have "assets" property
-    And "total" block should be presented in response
+    And should be received "error" response with correct structure
 
   @Web @/api/v3/showcases
   Scenario: Testing status for showcases for postpaid contract when web device give correct "page" and incorrect "limit"
@@ -400,11 +396,7 @@ Feature: Testing of /api/v3/showcases response
     When "web" device has connection to service
     And this device sends requests to receive showcases with parameter "page" equal "1" and "limit" equal "-1"
     Then should be received "200" response status
-    And should be received "success" response with correct structure
-    And "items" block should be presented in response
-    And this block should be not empty
-    And every element of array "items" must have "assets" property
-    And "total" block should be presented in response
+    And should be received "error" response with correct structure
 
   @Web @/api/v3/showcases
   Scenario: Testing status for showcases for postpaid contract when web device give correct "limit" and incorrect "page"
@@ -412,8 +404,4 @@ Feature: Testing of /api/v3/showcases response
     When "web" device has connection to service
     And this device sends requests to receive showcases with parameter "limit" equal "1" and "page" equal "-1"
     Then should be received "200" response status
-    And should be received "success" response with correct structure
-    And "items" block should be presented in response
-    And this block should be not empty
-    And every element of array "items" must have "assets" property
-    And "total" block should be presented in response
+    And should be received "error" response with correct structure
