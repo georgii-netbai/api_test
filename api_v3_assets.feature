@@ -39,7 +39,7 @@ Feature: Testing of /api/v3/assets response
   @Web @/api/v3/assets
   Scenario: Testing of status for assets when web device give correct limit
     Given same contract as for previous scenario
-    When "android" device has connection to service
+    When "web" device has connection to service
     And this device sends requests to receive assets with parameter "limit" equal "1"
     Then should be received "200" response status
     And should be received "success" response with correct structure
@@ -74,7 +74,7 @@ Feature: Testing of /api/v3/assets response
   @Web @/api/v3/assets
   Scenario: Testing of status for assets when web device give correct page
     Given same contract as for previous scenario
-    When "android" device has connection to service
+    When "web" device has connection to service
     And this device sends requests to receive assets with parameter "page" equal "1"
     Then should be received "200" response status
     And should be received "success" response with correct structure
@@ -109,7 +109,7 @@ Feature: Testing of /api/v3/assets response
   @Web @/api/v3/assets
   Scenario: Testing of status for assets when web device give correct search
     Given same contract as for previous scenario
-    When "android" device has connection to service
+    When "web" device has connection to service
     And this device sends requests to receive assets with parameter "search" equal " "
     Then should be received "200" response status
     And should be received "success" response with correct structure
@@ -237,7 +237,7 @@ Feature: Testing of /api/v3/assets response
 
 
   @STB @/api/v3/assets
-  Scenario: Testing of status for assets when web device give correct showcaseid
+  Scenario: Testing of status for assets when stb device give correct showcaseid
     Given same contract as for previous scenario
     When "stb" device has connection to service
     And this device sends requests to receive assets with parameter "showcaseid" equal "1"
@@ -248,7 +248,7 @@ Feature: Testing of /api/v3/assets response
     And "total" block should be presented in response
 
   @STB @/api/v3/assets
-  Scenario: Testing of status for assets when web device give correct limit
+  Scenario: Testing of status for assets when stb device give correct limit
     Given same contract as for previous scenario
     When "stb" device has connection to service
     And this device sends requests to receive assets with parameter "limit" equal "1"
@@ -259,7 +259,7 @@ Feature: Testing of /api/v3/assets response
     And "total" block should be presented in response
 
   @STB @/api/v3/assets
-  Scenario: Testing of status for assets when web device give correct page
+  Scenario: Testing of status for assets when stb device give correct page
     Given same contract as for previous scenario
     When "stb" device has connection to service
     And this device sends requests to receive assets with parameter "page" equal "1"
@@ -270,7 +270,7 @@ Feature: Testing of /api/v3/assets response
     And "total" block should be presented in response
 
   @STB @/api/v3/assets
-  Scenario: Testing of status for assets when web device give correct search
+  Scenario: Testing of status for assets when stb device give correct search
     Given same contract as for previous scenario
     When "stb" device has connection to service
     And this device sends requests to receive assets with parameter "search" equal " "
